@@ -271,10 +271,10 @@ noremap tmi :+tabmove<CR>
 " === Markdown Settings
 " ===
 " Snippets
-"source ~/.config/nvim/md-snippets.vim
+source ~/.config/nvim/md-snippets.vim
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
-noremap <C-x>s <C-x>
+" noremap <C-x>s <C-x>
 
 
 "===
@@ -314,7 +314,7 @@ nnoremap \p 1<C-G>
 noremap <LEADER>/ :term<CR>
 
 " Press space twice to jump to the next '<++>' and edit it
-noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>"-c4l
 noremap \\ <Esc>a<++><Esc>
 
 " Spelling Check with <space>sc
@@ -561,7 +561,7 @@ hi ColorColumn ctermbg=241 guibg=#665c54
 
 " ===================== Start of Plugin Settings =====================
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 
 " ===
