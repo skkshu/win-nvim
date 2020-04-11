@@ -321,7 +321,7 @@ noremap \\ <Esc>a<++><Esc>
 noremap <LEADER>sc :set spell!<CR>
 
 " Press ` to change case (instead of ~)
-" noremap ` ~
+noremap ` ~
 
 "noremap <C-c> zz
 
