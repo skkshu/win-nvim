@@ -42,7 +42,7 @@ set pyx=3
 " ===
 " === Editor behavior
 " ===
-set termguicolors "use "true color" in the terminal
+set termguicolors "use true color in the terminal
 set number
 set relativenumber
 set cursorline
@@ -213,7 +213,7 @@ noremap <C-E> 5<C-e>
 " ===
 " === Insert Mode Cursor Movement
 " ===
-" inoremap <C-a> <ESC>A
+inoremap <C-a> <ESC>%%a
 
 
 " ===
@@ -381,6 +381,9 @@ endfunc
 " ===
 
 call plug#begin('~/.config/nvim/plugged')
+" Plug '<++>'
+Plug 'morhetz/gruvbox'
+Plug 'frazrepo/vim-rainbow'
 Plug 'lambdalisue/suda.vim'
 Plug 'h-youhei/vim-fcitx'
 Plug 'nine2/vim-copyright'
@@ -403,7 +406,7 @@ Plug 'vim-airline/vim-airline'
 "Plug 'rakr/vim-one'
 "Plug 'mhartington/oceanic-next'
 "Plug 'kristijanhusak/vim-hybrid-material'
-"Plug 'ajmwagar/vim-deus'
+Plug 'ajmwagar/vim-deus'
 
 " Genreal Highlighter
 "Plug 'jaxbot/semantic-highlight.vim'
@@ -419,7 +422,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'francoiscabrol/ranger.vim'
 
 " Taglist
-"Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 
 " Error checking
 "Plug 'dense-analysis/ale'
@@ -479,9 +482,7 @@ Plug 'theniceboy/bullets.vim'
 "Plug 'Raimondi/delimitMate'
 "Plug 'cohama/lexima.vim'
 "Plug 'terryma/vim-multiple-cursors'
-"Plug 'scrooloose/nerdcommenter' " in <space>cn to comment a line
-"Plug 'preservim/nerdcommenter'
-Plug 'tyru/caw.vim'
+Plug 'tyru/caw.vim' "comment
 "Plug 'AndrewRadev/switch.vim' " gs to switch
 Plug 'tpope/vim-surround' " type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`
 "Plug 'gcmt/wildfire.vim' " in Visual mode, type k' to select all text in '', or type k) k] k} kp
@@ -549,12 +550,18 @@ call plug#end()
 
 "color dracula
 "color one
-"color deus
-"color gruvbox
+" color deus
+" color gruvbox
 "let ayucolor="light"
 "color ayu
 "set background=light
 "color xcodedark
+
+"===
+"=== hi
+"===
+hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+hi CursorLineNr guifg=white
 
 hi NonText ctermfg=gray guifg=grey10
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
@@ -738,6 +745,23 @@ let g:suda_smart_edit = 1
 " :$r suda:///etc/sudoers
 " :w suda:///etc/profile
 " :saveas suda:///etc/profile
+
+" ===
+" === vim-rainbow
+" ===
+" let g:rainbow_active = 1
+au FileType c,cpp,objc,objcpp,py call rainbow#load()
+
+let g:rainbow_guifgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
+let g:rainbow_ctermfgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
+
+
+
+
+
+
+
+
 
 " ===================== End of Plugin Settings =====================
 
