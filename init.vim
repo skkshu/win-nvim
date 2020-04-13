@@ -737,13 +737,6 @@ endfunc
 " ===
 let g:suda#prefix = ['suda://', 'sudo://', '_://']
 let g:suda_smart_edit = 1
-" `:e suda://%`
-" :w suda://%
-" :e suda:///etc/sudoers
-" :r suda:///etc/sudoers
-" :$r suda:///etc/sudoers
-" :w suda:///etc/profile
-" :saveas suda:///etc/profile
 
 " ===
 " === vim-rainbow
