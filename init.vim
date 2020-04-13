@@ -567,7 +567,8 @@ hi CursorLineNr guifg=white
 hi NonText ctermfg=gray guifg=grey10
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 " hi ColorColumn ctermbg=241 guibg=#665c54
-hi ColorColumn ctermbg=NONE guibg=NONE
+hi ColorColumn ctermbg=NONE guibg=#808080
+" hi ColorColumn ctermbg=NONE guibg=NONE
 "hi SpecialKey ctermfg=blue guifg=grey70
 
 hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
@@ -760,6 +761,28 @@ let g:rainbow_ctermfgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
 let g:file_copyright_name = "Joey Lee"
 let g:file_copyright_email = "skkshu@gmail.com"
 
+let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 'h', 'hpp', 'c', 'cpp', 'java', 'ruby', 'rb', 'rake', 'uml', 'plantuml']
+
+let g:file_copyright_comment_prefix_map  = {
+    \"python": "\#", "py":"\#",
+    \"cpp":"/*", "c":"/*", "h":"/*", "hpp":"/*",
+    \"go":"/*",
+    \"vim":"\"",
+    \"sh":"\#", "shell":"\#",
+\}
+
+let g:file_copyright_comment_mid_prefix_map = {
+    \"python": "\#", "py":"\#",
+    \"cpp":"\#", "c":"\#", "h":"\#", "hpp":"\#",
+    \"go":"\#",
+    \"vim":"\"",
+    \"sh":"\#", "shell":"\#",
+\}
+
+let g:file_copyright_comment_end_map = {
+    \"cpp":"*/", "c":"*/", "h":"*/", "hpp":"*/",
+    \"go":"*/",
+\}
 
 
 
