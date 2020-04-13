@@ -383,6 +383,8 @@ endfunc
 call plug#begin('~/.config/nvim/plugged')
 Plug 'lambdalisue/suda.vim'
 Plug 'h-youhei/vim-fcitx'
+Plug 'nine2/vim-copyright'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
 "Plug 'makerj/vim-pdf'
