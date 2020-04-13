@@ -282,28 +282,27 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 "===
 autocmd BufRead,BufNewFile *.c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
-autocmd BufNewFile *.c exec "call SetTitle()"
-func! SetTitle()
-    call setline(1, "/*")
-    call append(line("."), "* File Name: ".expand("%")) 
-    call append(line(".")+1, "* Author: Joey Lee") 
-    call append(line(".")+2, "* Mail: skkshu@gmail.com") 
-    call append(line(".")+3, "* Created Time: ".strftime("%c")) 
-    call append(line(".")+4, "* Description: <++>")
-    call append(line(".")+5,"*/")
-    call append(line(".")+6, "")
-    call append(line(".")+7, "#include <<++>.h>")
-    call append(line(".")+8, "")
-    call append(line(".")+9, "int main(int argc, char* argv[]) {") 
-    call append(line(".")+10, "  <++>") 
-    call append(line(".")+11, "  return 0;") 
-    call append(line(".")+12,"}")
-endfunc
+" autocmd BufNewFile *.c exec "call SetTitle()"
+" func! SetTitle()
+"     call setline(1, "/*")
+"     call append(line("."), "* File Name: ".expand("%")) 
+"     call append(line(".")+1, "* Author: Joey Lee") 
+"     call append(line(".")+2, "* Mail: skkshu@gmail.com") 
+"     call append(line(".")+3, "* Created Time: ".strftime("%c")) 
+"     call append(line(".")+4, "* Description: <++>")
+"     call append(line(".")+5,"*/")
+"     call append(line(".")+6, "")
+"     call append(line(".")+7, "#include <<++>.h>")
+"     call append(line(".")+8, "")
+"     call append(line(".")+9, "int main(int argc, char* argv[]) {") 
+"     call append(line(".")+10, "  <++>") 
+"     call append(line(".")+11, "  return 0;") 
+"     call append(line(".")+12,"}")
+" endfunc
 
 " ===
 " === Other useful stuff
 " ===
-hi SpellBad cterm =underline
 " \p to show the current buffer file path
 nnoremap \p 1<C-G>
 
@@ -382,6 +381,7 @@ endfunc
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
+Plug 'nine2/vim-copyright'
 Plug 'frazrepo/vim-rainbow'
 Plug 'lambdalisue/suda.vim'
 Plug 'h-youhei/vim-fcitx'
@@ -400,12 +400,12 @@ Plug 'vim-airline/vim-airline'
 "Plug 'theniceboy/eleline.vim'
 "Plug 'bling/vim-bufferline'
 "Plug 'liuchengxu/space-vim-theme'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'rakr/vim-one'
 "Plug 'mhartington/oceanic-next'
 "Plug 'kristijanhusak/vim-hybrid-material'
-" Plug 'ajmwagar/vim-deus'
+Plug 'ajmwagar/vim-deus'
 
 " Genreal Highlighter
 "Plug 'jaxbot/semantic-highlight.vim'
@@ -559,13 +559,18 @@ call plug#end()
 "===
 "=== hi
 "===
+hi SpellBad cterm =underline
+
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi CursorLineNr guifg=white
 
 hi NonText ctermfg=gray guifg=grey10
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-hi ColorColumn ctermbg=241 guibg=#665c54
+" hi ColorColumn ctermbg=241 guibg=#665c54
+hi ColorColumn ctermbg=NONE guibg=NONE
 "hi SpecialKey ctermfg=blue guifg=grey70
+
+hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " ===================== Start of Plugin Settings =====================
 
@@ -749,6 +754,11 @@ let g:rainbow_ctermfgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
 
 
 
+"===
+"=== nine2/vim-copyright
+"===
+let g:file_copyright_name = "Joey Lee"
+let g:file_copyright_email = "skkshu@gmail.com"
 
 
 
