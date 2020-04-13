@@ -382,7 +382,6 @@ endfunc
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
-Plug 'morhetz/gruvbox'
 Plug 'frazrepo/vim-rainbow'
 Plug 'lambdalisue/suda.vim'
 Plug 'h-youhei/vim-fcitx'
@@ -406,7 +405,7 @@ Plug 'vim-airline/vim-airline'
 "Plug 'rakr/vim-one'
 "Plug 'mhartington/oceanic-next'
 "Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'ajmwagar/vim-deus'
+" Plug 'ajmwagar/vim-deus'
 
 " Genreal Highlighter
 "Plug 'jaxbot/semantic-highlight.vim'
