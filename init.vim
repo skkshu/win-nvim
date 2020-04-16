@@ -10,9 +10,7 @@
 " ===
 " === Auto load for first time uses
 " ===
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob('~/.config/nvim/plugged/'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -29,6 +27,7 @@ ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
 " ===
 " set wd=3
 set autoread
+set textwidth=80
 
 " ===
 " === System
@@ -54,6 +53,7 @@ set softtabstop=2
 set autoindent
 set list
 set listchars=tab:\┆\ ,trail:▫ "|
+" set listchars=space:·,tab:│\ ,eol:¬
 set scrolloff=5
 set ttimeoutlen=0
 set notimeout
@@ -61,7 +61,8 @@ set viewoptions=cursor,folds,slash,unix
 set wrap
 set tw=0
 set indentexpr=
-set foldmethod=indent
+" set foldmethod=indent
+set foldmethod=marker
 set foldlevel=99
 set foldenable
 set formatoptions-=tc
