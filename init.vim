@@ -28,6 +28,7 @@ ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
 " === now
 " ===
 " set wd=3
+set autoread
 
 " ===
 " === System
@@ -52,7 +53,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set list
-set listchars=tab:\|\ ,trail:▫
+set listchars=tab:\┆\ ,trail:▫ "|
 set scrolloff=5
 set ttimeoutlen=0
 set notimeout
@@ -337,7 +338,7 @@ autocmd BufEnter * silent! lcd %:p:h
 "noremap \s :%s//g<left><left>
 
 " Compile function
-noremap r :call CompileRunGcc()<CR>
+noremap <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
@@ -541,7 +542,7 @@ call plug#end()
 " ===
 "set termguicolors	" enable true colors support
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"set background=dark
+set background=dark
 "let ayucolor="mirage"
 "let g:oceanic_next_terminal_bold = 1
 "let g:oceanic_next_terminal_italic = 1
@@ -563,13 +564,13 @@ hi SpellBad cterm =underline
 
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi CursorLineNr guifg=white
-
 hi NonText ctermfg=gray guifg=grey10
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 " hi ColorColumn ctermbg=241 guibg=#665c54
 hi ColorColumn ctermbg=NONE guibg=#808080
 " hi ColorColumn ctermbg=NONE guibg=NONE
-"hi SpecialKey ctermfg=blue guifg=grey70
+" hi SpecialKey ctermfg=66 guifg=#649A9A " junegunn
+hi SpecialKey ctermfg=blue guifg=grey70
 
 hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
@@ -721,7 +722,7 @@ let g:SignatureMap = {
 " ===
 " === Goyo
 " ===
-map \gy :Goyo<CR>
+map <leader>gy :Goyo<CR>
 
 " ===
 " === Undotree
