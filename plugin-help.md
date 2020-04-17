@@ -6,3 +6,9 @@
 " :$r suda:///etc/sudoers
 " :w suda:///etc/profile
 " :saveas suda:///etc/profile
+
+## vim-surround
+`yskw'`
+  :  to wrap the word with ''
+`cs'``
+  :  to change 'word' to `word`

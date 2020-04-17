@@ -5,7 +5,8 @@
 "|_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
 
 " Credits:
-"   created by @theniceboy @skkshu
+"   @theniceboy
+"   @skkshu
 
 " ===
 " === Auto load for first time uses
@@ -19,15 +20,21 @@ endif
 " ====================
 set fileencodings=utf8,cp936,gb18030,big5
 
-" use <C-A> to use calculator
-ino <C-A> <C-O>yiW<End>=<C-R>=<C-R>0<CR> 
+" use <C-c> to use calculator
+inoremap <C-c> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
+
+" %%a
+inoremap <C-a> <ESC>%%a
 
 " ===
 " === now
 " ===
-" set wd=3
+" set writedelay=3
 set autoread
-set textwidth=80
+
+set nocompatible " vimwiki required
+filetype plugin on " vimwiki required
+
 
 " ===
 " === System
@@ -37,12 +44,11 @@ set clipboard+=unnamedplus
 let &t_ut=''
 set autochdir
 
-set pyx=3
+set pyx=3 "pythonx
 
 " ===
 " === Editor behavior
 " ===
-set termguicolors "use true color in the terminal
 set number
 set relativenumber
 set cursorline
@@ -54,12 +60,30 @@ set autoindent
 set list
 set listchars=tab:\┆\ ,trail:▫ "|
 " set listchars=space:·,tab:│\ ,eol:¬
+
+"==                       st: shiftwidth
+"== Settings by filetype  et: expandtab ts: textwidth
+"==                       tw: textwidth
+" au FileType mail setlocal sw=2 sts=2 textwidth=0 wrapmargin=0 wrap linebreak nolist "mutt
+" au FileType vimwiki  setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType javascript setlocal tabstop=2 shiftwidth=2 sts=2 expandtab
+au FileType json       setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType typescript setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType markdown   setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType text       setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType html       setlocal tabstop=2 shiftwidth=2 sts=2 expandtab
+au FileType yaml       setlocal tabstop=2 shiftwidth=2 expandtab
+au Filetype css        setlocal tabstop=2 shiftwidth=2 sts=2
+au Filetype c          setlocal tabstop=4 shiftwidth=4 sts=4 textwidth=4 noexpandtab
+
+" autocmd BufRead,BufNewFile *.c setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
 set scrolloff=5
 set ttimeoutlen=0
 set notimeout
 set viewoptions=cursor,folds,slash,unix
 set wrap
-set tw=0
+set textwidth=0 "default
 set indentexpr=
 " set foldmethod=indent
 set foldmethod=marker
@@ -75,8 +99,10 @@ set ignorecase
 set smartcase
 set shortmess+=c
 set inccommand=split
+
 set ttyfast "should make scrolling faster
 set lazyredraw "same as above
+
 set visualbell
 
 " store the edit history even you quit
@@ -89,12 +115,10 @@ if has('persistent_undo')
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
 
-set colorcolumn=80
-set updatetime=1000
+set updatetime=1000 " milliseconds swap files will be written to the disk " cursorhold
 
 " when you enter a file, your cursor will jump to the place you edit last time.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 
 " ===
 " === Terminal Behaviors
@@ -140,13 +164,13 @@ noremap <LEADER>st :Startify<CR>
 
 " Undo operation
 noremap l u
-noremap <C-l> u
+noremap <C-l> U
 
-" Insert Key
+" Insert
 noremap k i
 noremap K I
 
-" make Y to copy till the end of the line
+" make <nno>Y more logical, but not vi-compatible
 nnoremap Y y$
 
 " Copy to system clipboard "I do need that
@@ -188,16 +212,12 @@ noremap <silent> n h
 noremap <silent> e j
 noremap <silent> i l
 
-"noremap = nzz
-"noremap - Nzz
-
 " U/E keys for 5 times u/e (faster navigation)
 noremap <silent> U 5k
 noremap <silent> E 5j
 
-" N key: go to the start of the line
-noremap <silent> N 0
-" I key: go to the end of the line
+" N: to the 1st non-blank character of the line
+noremap <silent> N ^
 noremap <silent> I 80l
 
 " Faster in-line navigation
@@ -213,16 +233,10 @@ noremap <C-U> 5<C-y>
 noremap <C-E> 5<C-e>
 
 " ===
-" === Insert Mode Cursor Movement
-" ===
-inoremap <C-a> <ESC>%%a
-
-
-" ===
 " === Window management
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
-noremap <LEADER>w <C-w>w
+" noremap <LEADER>w <C-w>w
 noremap <LEADER>u <C-w>k
 noremap <LEADER>e <C-w>j
 noremap <LEADER>n <C-w>h
@@ -238,10 +252,10 @@ noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
 noremap si :set splitright<CR>:vsplit<CR>
 
 " Resize splits with arrow keys
-noremap <up> :res +5<CR>
-noremap <down> :res -5<CR>
-noremap <left> :vertical resize-5<CR>
-noremap <right> :vertical resize+5<CR>
+noremap <up> :res +2<CR>
+noremap <down> :res -2<CR>
+noremap <left> :vertical resize-2<CR>
+noremap <right> :vertical resize+2<CR>
 
 " Place the two screens up and down
 noremap sh <C-w>t<C-w>K
@@ -252,7 +266,7 @@ noremap sv <C-w>t<C-w>H
 noremap srh <C-w>b<C-w>K
 noremap srv <C-w>b<C-w>H
 
-" Press <SPACE> + q to close the window below the current window
+" Close the window below the current
 noremap <LEADER>q <C-w>j:q<CR>
 
 
@@ -278,30 +292,6 @@ source ~/.config/nvim/md-snippets.vim
 autocmd BufRead,BufNewFile *.md setlocal spell
 " noremap <C-x>s <C-x>
 
-
-"===
-"=== C settings
-"===
-autocmd BufRead,BufNewFile *.c setlocal tabstop=4 shiftwidth=4 softtabstop=4
-
-" autocmd BufNewFile *.c exec "call SetTitle()"
-" func! SetTitle()
-"     call setline(1, "/*")
-"     call append(line("."), "* File Name: ".expand("%")) 
-"     call append(line(".")+1, "* Author: Joey Lee") 
-"     call append(line(".")+2, "* Mail: skkshu@gmail.com") 
-"     call append(line(".")+3, "* Created Time: ".strftime("%c")) 
-"     call append(line(".")+4, "* Description: <++>")
-"     call append(line(".")+5,"*/")
-"     call append(line(".")+6, "")
-"     call append(line(".")+7, "#include <<++>.h>")
-"     call append(line(".")+8, "")
-"     call append(line(".")+9, "int main(int argc, char* argv[]) {") 
-"     call append(line(".")+10, "  <++>") 
-"     call append(line(".")+11, "  return 0;") 
-"     call append(line(".")+12,"}")
-" endfunc
-
 " ===
 " === Other useful stuff
 " ===
@@ -319,12 +309,10 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>"-c4l
 noremap \\ <Esc>a<++><Esc>
 
 " Spelling Check with <space>sc
-noremap <LEADER>sc :set spell!<CR>
+noremap ss :set spell!<CR>
 
-" Press ` to change case (instead of ~)
+" Press ` to toggle case (instead of ~)
 noremap ` ~
-
-"noremap <C-c> zz
 
 " Auto change directory to current dir
 autocmd BufEnter * silent! lcd %:p:h
@@ -383,11 +371,13 @@ endfunc
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
-Plug 'nine2/vim-copyright'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar' " Ctags <F6>
+Plug 'skkshu/vim-copyright' " orig: nine2
 Plug 'frazrepo/vim-rainbow'
 Plug 'lambdalisue/suda.vim'
 Plug 'h-youhei/vim-fcitx'
-Plug 'nine2/vim-copyright'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
@@ -410,7 +400,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 
 " Genreal Highlighter
-"Plug 'jaxbot/semantic-highlight.vim'
+Plug 'jaxbot/semantic-highlight.vim'
 "Plug 'chrisbra/Colorizer' " Show colors with :ColorHighlight
 
 " File navigation
@@ -484,11 +474,11 @@ Plug 'theniceboy/bullets.vim'
 "Plug 'cohama/lexima.vim'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'tyru/caw.vim' "comment
-"Plug 'AndrewRadev/switch.vim' " gs to switch
-Plug 'tpope/vim-surround' " type yskw' to wrap the word with '' or type cs'` to change 'word' to `word`
+Plug 'AndrewRadev/switch.vim' " gs to switch
+Plug 'tpope/vim-surround'
 "Plug 'gcmt/wildfire.vim' " in Visual mode, type k' to select all text in '', or type k) k] k} kp
 "Plug 'junegunn/vim-after-object' " da= to delete what's after =
-"Plug 'junegunn/vim-easy-align' " gaip= to align the = in paragraph, 
+Plug 'junegunn/vim-easy-align' " gaip= to align the = in paragraph, 
 "Plug 'tpope/vim-capslock'	" Ctrl+L (insert) to toggle capslock
 "Plug 'easymotion/vim-easymotion'
 "Plug 'Konfekt/FastFold'
@@ -541,7 +531,7 @@ call plug#end()
 " ===
 " === Dress up my vim
 " ===
-"set termguicolors	" enable true colors support
+set termguicolors "use true color in the terminal
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 "let ayucolor="mirage"
@@ -566,18 +556,25 @@ hi SpellBad cterm =underline
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi CursorLineNr guifg=white
 hi NonText ctermfg=gray guifg=grey10
-"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-" hi ColorColumn ctermbg=241 guibg=#665c54
+
+set colorcolumn=80
 hi ColorColumn ctermbg=NONE guibg=#808080
+" hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+" hi ColorColumn ctermbg=241 guibg=#665c54
 " hi ColorColumn ctermbg=NONE guibg=NONE
+
 " hi SpecialKey ctermfg=66 guifg=#649A9A " junegunn
 hi SpecialKey ctermfg=blue guifg=grey70
 
 hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
+" Better Whitespace
+hi ExtraWhitespace guibg=#E06C75
 " ===================== Start of Plugin Settings =====================
 
 let g:airline_powerline_fonts = 0
+" let g:airline_theme='alduin'
+" let g:airline_theme='cool'
 
 
 " ===
@@ -668,7 +665,7 @@ let g:mkdp_preview_options = {
 			\ }
 let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
-let g:mkdp_port = '5000'
+let g:mkdp_port = '2020'
 let g:mkdp_page_title = '「${name}」'
 
 
@@ -758,9 +755,8 @@ let g:rainbow_guifgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
 let g:rainbow_ctermfgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
 
 
-
 "===
-"=== nine2/vim-copyright
+"=== skkshu/vim-copyright " orig: nine2
 "===
 let g:file_copyright_name = "Joey Lee"
 let g:file_copyright_email = "skkshu@gmail.com"
@@ -789,7 +785,8 @@ let g:file_copyright_comment_end_map = {
 \}
 
 
-
+nmap <F4> :TagbarToggle<CR>
+nnoremap <Leader>sm :SemanticHighlightToggle<cr>
 
 
 " ===================== End of Plugin Settings =====================
