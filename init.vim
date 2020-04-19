@@ -62,8 +62,8 @@ set listchars=tab:\┆\ ,trail:▫ "|
 " set listchars=space:·,tab:│\ ,eol:¬
 
 "==                       st: shiftwidth
-"== Settings by filetype  et: expandtab ts: textwidth
-"==                       tw: textwidth
+"== Settings by filetype  et: expandtab --> tab->whitespace
+"==                       tw: textwidth ts: textwidth
 " au FileType mail setlocal sw=2 sts=2 textwidth=0 wrapmargin=0 wrap linebreak nolist "mutt
 " au FileType vimwiki  setlocal tabstop=2 shiftwidth=2 expandtab
 au FileType javascript setlocal tabstop=2 shiftwidth=2 sts=2 expandtab
@@ -100,7 +100,7 @@ set smartcase
 set shortmess+=c
 set inccommand=split
 
-set ttyfast "should make scrolling faster
+" set ttyfast "should make scrolling faster
 set lazyredraw "same as above
 
 set visualbell
@@ -371,8 +371,8 @@ endfunc
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
-Plug 'vimwiki/vimwiki'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vimwiki/vimwiki'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar' " Ctags <F6>
 Plug 'skkshu/vim-copyright' " orig: nine2
 Plug 'frazrepo/vim-rainbow'
@@ -392,12 +392,12 @@ Plug 'vim-airline/vim-airline'
 "Plug 'theniceboy/eleline.vim'
 "Plug 'bling/vim-bufferline'
 "Plug 'liuchengxu/space-vim-theme'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'rakr/vim-one'
 "Plug 'mhartington/oceanic-next'
 "Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'ajmwagar/vim-deus'
+" Plug 'ajmwagar/vim-deus'
 
 " Genreal Highlighter
 Plug 'jaxbot/semantic-highlight.vim'
@@ -443,7 +443,7 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
 
 " HTML, CSS, JavaScript, PHP, JSON, etc.
-Plug 'elzr/vim-json'
+" Plug 'elzr/vim-json'
 "Plug 'hail2u/vim-css3-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 "Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
 "Plug 'pangloss/vim-javascript', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
@@ -517,7 +517,7 @@ Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 " Other useful utilities
-Plug 'tpope/vim-eunuch' " do stuff like :SudoWrite
+" Plug 'tpope/vim-eunuch' " do stuff like :SudoWrite
 
 " Dependencies
 "Plug 'MarcWeber/vim-addon-mw-utils'
@@ -533,7 +533,7 @@ call plug#end()
 " ===
 set termguicolors "use true color in the terminal
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
+" set background=dark
 "let ayucolor="mirage"
 "let g:oceanic_next_terminal_bold = 1
 "let g:oceanic_next_terminal_italic = 1
@@ -553,6 +553,7 @@ set background=dark
 "===
 hi SpellBad cterm =underline
 
+" hi Title guifg=Red
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi CursorLineNr guifg=white
 hi NonText ctermfg=gray guifg=grey10
@@ -763,26 +764,7 @@ let g:file_copyright_email = "skkshu@gmail.com"
 
 let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 'h', 'hpp', 'c', 'cpp', 'java', 'ruby', 'rb', 'rake', 'uml', 'plantuml']
 
-let g:file_copyright_comment_prefix_map  = {
-    \"python": "\#", "py":"\#",
-    \"cpp":"/*", "c":"/*", "h":"/*", "hpp":"/*",
-    \"go":"/*",
-    \"vim":"\"",
-    \"sh":"\#", "shell":"\#",
-\}
 
-let g:file_copyright_comment_mid_prefix_map = {
-    \"python": "\#", "py":"\#",
-    \"cpp":"\#", "c":"\#", "h":"\#", "hpp":"\#",
-    \"go":"\#",
-    \"vim":"\"",
-    \"sh":"\#", "shell":"\#",
-\}
-
-let g:file_copyright_comment_end_map = {
-    \"cpp":"*/", "c":"*/", "h":"*/", "hpp":"*/",
-    \"go":"*/",
-\}
 
 
 nmap <F4> :TagbarToggle<CR>
