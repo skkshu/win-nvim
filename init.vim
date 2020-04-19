@@ -115,7 +115,7 @@ if has('persistent_undo')
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
 
-set updatetime=1000 " milliseconds swap files will be written to the disk " cursorhold
+set updatetime=100 " milliseconds swap files will be written to the disk " cursorhold
 
 " when you enter a file, your cursor will jump to the place you edit last time.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
