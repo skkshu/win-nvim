@@ -115,7 +115,10 @@ if has('persistent_undo')
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
 
-set updatetime=100 " milliseconds swap files will be written to the disk " cursorhold
+" milliseconds swap files will be written to the disk
+" cursorhold
+" <plug>vim-gitgutter
+set updatetime=100 
 
 " when you enter a file, your cursor will jump to the place you edit last time.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -557,7 +560,6 @@ hi SpellBad cterm =underline
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi CursorLineNr guifg=white
 hi NonText ctermfg=gray guifg=grey10
-
 set colorcolumn=80
 hi ColorColumn ctermbg=NONE guibg=#808080
 " hi ColorColumn ctermbg=lightgrey guibg=lightgrey
@@ -568,6 +570,9 @@ hi ColorColumn ctermbg=NONE guibg=#808080
 hi SpecialKey ctermfg=blue guifg=grey70
 
 hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+
+hi SignColumn ctermbg=none  " terminal Vim
+hi SignColumn guibg=none    " gVim/MacVim
 
 " Better Whitespace
 hi ExtraWhitespace guibg=#E06C75
@@ -687,8 +692,27 @@ let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 " ===
 " === vim-gitgutter
 " ===
-let g:gitgutter_max_signs = 1000 " default 500
+set signcolumn=auto " yes
+let g:gitgutter_max_signs = 500 " Default: 500
+let g:gitgutter_map_keys = 0 " Disable all key mappings
+highlight GitGutterAdd    guifg=#009900 guibg=NONE ctermfg=2 ctermbg=NONE
+highlight GitGutterChange guifg=#bbbb00 guibg=NONE ctermfg=3 ctermbg=NONE
+highlight GitGutterDelete guifg=#ff2222 guibg=NONE ctermfg=1 ctermbg=NONE
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+" let g:gitgutter_sign_removed_first_line = '^^'
+" let g:gitgutter_sign_modified_removed = 'ww'
+nmap <c-[> <Plug>(GitGutterPrevHunk)
+nmap <c-]> <Plug>(GitGutterNextHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
+" let g:gitgutter_preview_win_floating = 1
+" let g:gitgutter_use_location_list = 0 " 1: load all hunks in the current buffer
 
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_highlight_linenrs = 1
 
 " ===
 " === vim-signature
