@@ -197,8 +197,8 @@ noremap <LEADER>dw /\(\<\w\+\>\)\_s*\1
 noremap <silent> <LEADER>o za
 
 " Open up lazygit
-noremap \lg :term lazygit<CR>
-noremap <C-g> :term lazygit<CR>
+" noremap \lg :term lazygit<CR>
+" noremap <C-g> :term lazygit<CR>
 
 
 " ===
@@ -220,7 +220,7 @@ noremap <silent> U 5k
 noremap <silent> E 5j
 
 " N: to the 1st non-blank character of the line
-noremap <silent> N ^
+noremap <silent> N 0
 noremap <silent> I 80l
 
 " Faster in-line navigation
