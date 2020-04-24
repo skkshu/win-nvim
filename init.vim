@@ -221,7 +221,7 @@ noremap <silent> E 5j
 
 " N: to the 1st non-blank character of the line
 noremap <silent> N 0
-noremap <silent> I 80l
+noremap <silent> I 78l
 
 " Faster in-line navigation
 noremap W 5w
@@ -409,7 +409,7 @@ Plug 'jaxbot/semantic-highlight.vim'
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 "Plug 'yuki-ycino/fzf-preview.vim'
 "Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 "Plug 'junegunn/fzf'
@@ -659,7 +659,7 @@ let g:mkdp_open_to_the_world = 0
 let g:mkdp_open_ip = '127.0.0.1'
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_browserfunc = ''
-let g:mkdp_browser = 'google-chrome-stable'
+let g:mkdp_browser = 'chromium'
 let g:mkdp_preview_options = {
 			\ 'mkit': {},
 			\ 'katex': {},
@@ -793,6 +793,45 @@ let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 
 
 nmap <F4> :TagbarToggle<CR>
 nnoremap <Leader>sm :SemanticHighlightToggle<cr>
+
+" ===
+" === FZF
+" ===
+set rtp+=/usr/local/opt/fzf
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+noremap <C-p> :Files<CR>
+noremap <C-f> :Rg<CR>
+noremap <C-h> :History<CR>
+noremap <C-t> :BTags<CR>
+noremap <C-l> :Lines<CR>
+noremap <C-w> :Buffers<CR>
+noremap <leader>; :History:<CR>
+
+let g:fzf_preview_window = 'right:60%'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
+
+noremap <c-d> :BD<CR>
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
+
+
 
 
 " ===================== End of Plugin Settings =====================
