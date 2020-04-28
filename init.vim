@@ -393,6 +393,7 @@ Plug 'junegunn/vim-peekaboo'
 "Plug 'theniceboy/vim-calc'
 
 " Pretty Dress
+Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
 "Plug 'theniceboy/eleline.vim'
 "Plug 'bling/vim-bufferline'
@@ -550,9 +551,9 @@ set termguicolors "use true color in the terminal
 " color gruvbox
 "let ayucolor="light"
 "color ayu
-"set background=light
+" set background=light " if only this enabled, colorscheme is like darkblue
 "color xcodedark
-
+color snazzy
 "===
 "=== hi
 "===
@@ -835,6 +836,13 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
 
 
 
+" ===
+" === vim-Snazzy
+" ===
+let g:SnazzyTransparent = 1
+let g:lightline = {
+\ 'colorscheme': 'snazzy',
+\ }
 
 " ===================== End of Plugin Settings =====================
 
