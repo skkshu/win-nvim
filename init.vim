@@ -31,6 +31,8 @@ inoremap <C-a> <ESC>%%a
 " ===
 " set writedelay=3
 set autoread
+noremap <F3> :set signcolumn=no<CR>
+noremap <F2> :set signcolumn=auto<CR>
 
 set nocompatible " vimwiki required
 filetype plugin on " vimwiki required
