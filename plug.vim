@@ -434,4 +434,22 @@ let g:r_syntax_folding = 1
 let g:rust_fold = 1
 let g:php_folding = 1
 
+" ===
+" === NERDTree
+" ===
+noremap tt :NERDTreeToggle<CR>
+let NERDTreeMapOpenExpl        = ""
+let NERDTreeMapUpdir           = "N"
+let NERDTreeMapUpdirKeepOpen   = "n"
+let NERDTreeMapOpenSplit       = ""
+let NERDTreeMapOpenVSplit      = "I"
+let NERDTreeMapActivateNode    = "i"
+let NERDTreeMapOpenInTab       = "o"
+let NERDTreeMapOpenInTabSilent = "O"
+let NERDTreeMapPreview         = ""
+let NERDTreeMapCloseDir        = ""
+let NERDTreeMapChangeRoot      = "l"
+let NERDTreeMapMenu            = ","
+let NERDTreeMapToggleHidden    = "zh"
+
 " ===================== End of Plugin Settings =====================

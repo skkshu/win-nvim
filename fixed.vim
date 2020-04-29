@@ -60,7 +60,7 @@ nnoremap > >>
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>"-c4l
 noremap \\ <Esc>a<++><Esc>
 
-noremap <C-g> 2<C-g>
+noremap <C-g> 1<C-g>
 "===
 "=== Settings
 "===
