@@ -28,7 +28,7 @@
 " noremap <LEADER>dw /\(\<\w\+\>\)\_s*\1
 
 " Folding
-" noremap <silent> <LEADER>o za
+noremap <silent> <LEADER>o za
 
 " find and replace
 noremap \s :%s//g<left><left>

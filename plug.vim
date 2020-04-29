@@ -11,14 +11,14 @@ Plug 'vim-scripts/fcitx.vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
-"Plug 'makerj/vim-pdf'
+Plug 'makerj/vim-pdf'
 "Plug 'theniceboy/vim-leader-mapper'
 
 " Pretty Dress
 Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
-"Plug 'theniceboy/eleline.vim'
-"Plug 'bling/vim-bufferline'
+" Plug 'theniceboy/eleline.vim'
+" Plug 'bling/vim-bufferline'
 "Plug 'liuchengxu/space-vim-theme'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'rakr/vim-one'
@@ -92,6 +92,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 Plug 'theniceboy/bullets.vim'
+Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 
 " Editor Enhancement
 "Plug 'Raimondi/delimitMate'
@@ -105,7 +106,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align' " gaip= to align the = in paragraph
 "Plug 'tpope/vim-capslock'	" Ctrl+L (insert) to toggle capslock
 "Plug 'easymotion/vim-easymotion'
-"Plug 'Konfekt/FastFold'
+Plug 'Konfekt/FastFold'
 
 " Input Method Autoswitch
 "Plug 'rlue/vim-barbaric'
@@ -411,5 +412,26 @@ function! NearestMethodOrFunction() abort
 endfunction
 set statusline+=%{NearestMethodOrFunction()}
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+
+" ===
+" === fastfold
+" ===
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'ze', 'zu']
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
 
 " ===================== End of Plugin Settings =====================

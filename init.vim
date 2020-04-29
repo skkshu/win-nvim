@@ -6,10 +6,10 @@ source ~/.config/nvim/fixed.vim
 source ~/.config/nvim/optional.vim
 source ~/.config/nvim/fomatting.vim
 source ~/.config/nvim/split-tab.vim
-source ~/.config/nvim/plug.vim
 source ~/.config/nvim/md.vim
 source ~/.config/nvim/_machine_specific_default.vim
 
+source ~/.config/nvim/plug.vim
 " ===
 " === not yet archived
 " ===
