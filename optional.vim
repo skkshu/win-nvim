@@ -31,7 +31,7 @@
 " noremap <silent> <LEADER>o za
 
 " find and replace
-"noremap \s :%s//g<left><left>
+noremap \s :%s//g<left><left>
 
 "noremap <LEADER>- :lN<CR>
 "noremap <LEADER>= :lne<CR>

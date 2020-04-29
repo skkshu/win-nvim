@@ -35,7 +35,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf.vim'
 
 " Taglist
-" Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 
 " Error checking
 "Plug 'dense-analysis/ale'
@@ -393,5 +393,23 @@ let g:lightline = {
 "=== junegunn/vim-easy-align
 "===
 xmap ga <Plug>(EasyAlign)
+
+" ===
+" === Vista.vim
+" ===
+noremap T :silent! Vista finder coc<CR>
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+function! NearestMethodOrFunction() abort
+	return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+set statusline+=%{NearestMethodOrFunction()}
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 " ===================== End of Plugin Settings =====================
