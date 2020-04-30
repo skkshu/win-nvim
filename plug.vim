@@ -323,10 +323,10 @@ let g:suda_smart_edit = 1
 " === vim-rainbow
 " ===
 let g:rainbow_active = 1
-au FileType c,cpp,objc,objcpp,py call rainbow#load()
+" au FileType c,cpp,objc,objcpp,py call rainbow#load()
 
-let g:rainbow_guifgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
-let g:rainbow_ctermfgs = ['yellow', 'cyan', 'magenta', 'red', 'white']
+let g:rainbow_guifgs = ['cyan', 'magenta', 'red', 'white']
+let g:rainbow_ctermfgs = ['cyan', 'magenta', 'red', 'white']
 
 
 "===
@@ -385,6 +385,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 " ===
 " === vim-Snazzy
 " ===
+let  yellow   =  '#FFD700'
 let g:SnazzyTransparent = 1
 let g:lightline = {
 \ 'colorscheme': 'snazzy',

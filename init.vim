@@ -10,7 +10,6 @@ source ~/.config/nvim/fomatting.vim
 source ~/.config/nvim/split-tab.vim
 source ~/.config/nvim/md.vim
 source ~/.config/nvim/_machine_specific_default.vim
-source ~/.config/nvim/hi.vim
 source ~/.config/nvim/open.vim
 
 source ~/.config/nvim/plug.vim
@@ -25,6 +24,7 @@ noremap <LEADER>ss :set spell!<CR>
 
 "color dracula
 color snazzy
+source ~/.config/nvim/hi.vim
 
 " ===
 " === Necessary Commands to Execute
