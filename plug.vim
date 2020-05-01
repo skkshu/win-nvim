@@ -55,7 +55,7 @@ Plug 'honza/vim-snippets'
 "Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 "Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
 "Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
 
 " Tex
 "Plug 'lervag/vimtex'
@@ -262,6 +262,7 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
+nmap <LEADER>gg :GitGutterEnable<CR>
 
 " ===
 " === vim-signature
