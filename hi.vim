@@ -4,14 +4,13 @@
 " hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 " hi LineNr guifg=#606580 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE "snazzy
 hi CursorLineNr guifg=white
-set colorcolumn=80
 
 " hi ColorColumn ctermbg=NONE guibg=#757575
 " hi ColorColumn ctermbg=NONE guibg=NONE
 
 " hi SpecialKey ctermfg=66 guifg=#649A9A " junegunn
 " hi SpecialKey ctermfg=blue guifg=grey70
-hi NonText ctermfg=gray guifg=grey10 ctermfg=red guifg=red
+" hi NonText ctermfg=gray guifg=grey10 ctermfg=red guifg=red
 
 " hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 

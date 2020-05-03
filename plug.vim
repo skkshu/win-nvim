@@ -11,7 +11,7 @@ Plug 'vim-scripts/fcitx.vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
-Plug 'makerj/vim-pdf'
+" Plug 'makerj/vim-pdf'
 "Plug 'theniceboy/vim-leader-mapper'
 
 " Pretty Dress
@@ -439,7 +439,7 @@ let g:php_folding = 1
 " ===
 " === NERDTree
 " ===
-noremap tt :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenExpl        = ""
 let NERDTreeMapUpdir           = "N"
 let NERDTreeMapUpdirKeepOpen   = "n"
