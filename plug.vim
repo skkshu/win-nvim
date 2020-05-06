@@ -49,7 +49,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
 " Undo Tree
-" Plug 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 " Git
 "Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }

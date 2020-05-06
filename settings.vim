@@ -20,7 +20,7 @@ set pyx=3 "pythonx
 " ===
 " === Editor behavior
 " ===
-set colorcolumn=80
+" set colorcolumn=80
 
 set updatetime=1000
 " 1. milliseconds swap files will be written to the disk
