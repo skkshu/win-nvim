@@ -4,7 +4,7 @@
 " inoremap <C-c> <C-O>yiW<End>=<C-R>=<C-R>0<CR>=
 
 " %%a
-inoremap <C-a> <ESC>%%a
+" inoremap <C-a> <ESC>%%a
 
 " set writedelay=3
 

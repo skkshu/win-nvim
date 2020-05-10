@@ -341,7 +341,7 @@ let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 
 
 
 
-nmap <F4> :TagbarToggle<CR>
+noremap <F4> :TagbarToggle<CR><C-w><C-w>
 nnoremap <Leader>sm :SemanticHighlightToggle<cr>
 
 " ===
@@ -354,7 +354,7 @@ noremap <C-f> :Rg<CR>
 noremap <C-h> :History<CR>
 noremap <C-t> :BTags<CR>
 noremap <C-l> :Lines<CR>
-noremap <C-w> :Buffers<CR>
+" noremap <C-w> :Buffers<CR>
 noremap <leader>; :History:<CR>
 
 let g:fzf_preview_window = 'right:60%'
@@ -387,7 +387,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 " === vim-Snazzy
 " ===
 let  yellow   =  '#FFD700'
-let g:SnazzyTransparent = 1
+let g:SnazzyTransparent = 0
 let g:lightline = {
 \ 'colorscheme': 'snazzy',
 \ }
