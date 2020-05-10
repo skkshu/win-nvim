@@ -23,5 +23,6 @@ au FileType html       setlocal tabstop=2 shiftwidth=2 sts=2 expandtab
 au FileType yaml       setlocal tabstop=2 shiftwidth=2 expandtab
 au Filetype css        setlocal tabstop=2 shiftwidth=2 sts=2
 au Filetype c          setlocal tabstop=4 shiftwidth=4 sts=4 textwidth=4 noexpandtab
+au Filetype sh         setlocal tabstop=4 shiftwidth=4 sts=4 textwidth=4 noexpandtab
 
 " autocmd BufRead,BufNewFile *.c setlocal tabstop=4 shiftwidth=4 softtabstop=4

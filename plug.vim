@@ -439,7 +439,7 @@ let g:php_folding = 1
 " ===
 " === NERDTree
 " ===
-noremap <C-n> :NERDTreeToggle<CR>
+noremap tt :NERDTreeToggle<CR>
 let NERDTreeMapOpenExpl        = ""
 let NERDTreeMapUpdir           = "N"
 let NERDTreeMapUpdirKeepOpen   = "n"
