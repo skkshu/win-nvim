@@ -30,3 +30,10 @@ source ~/.config/nvim/hi.vim
 " === Necessary Commands to Execute
 " ===
 exec "nohlsearch"
+
+" ino <C-e> <C-n>
+" ino <C-u> <C-p>
+" ino <C-s> <BS>
+" ino <C-n> <C-h>
+ino <C-a> <Esc>A
+ino <C-j> <Esc>o

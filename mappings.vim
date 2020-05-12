@@ -43,8 +43,8 @@ noremap K I
 noremap ` ~
 
 " Ctrl + U or E will move up/down the view port without moving the cursor
-noremap <C-U> 5<C-y>
-noremap <C-E> 5<C-e>
+" noremap <C-U> 5<C-y>
+" noremap <C-E> 5<C-e>
 
 " make <nno>Y more logical, but not vi-compatible
 nnoremap Y y$
