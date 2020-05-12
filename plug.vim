@@ -8,7 +8,7 @@ Plug 'majutsushi/tagbar' " Ctags <F6>
 Plug 'skkshu/vim-copyright' " orig: nine2
 Plug 'lambdalisue/suda.vim'
 Plug 'vim-scripts/fcitx.vim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
 " Plug 'makerj/vim-pdf'
@@ -17,13 +17,6 @@ Plug 'junegunn/vim-peekaboo'
 " Pretty Dress
 Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
-" Plug 'theniceboy/eleline.vim'
-" Plug 'bling/vim-bufferline'
-"Plug 'liuchengxu/space-vim-theme'
-"Plug 'ayu-theme/ayu-vim'
-"Plug 'rakr/vim-one'
-"Plug 'mhartington/oceanic-next'
-"Plug 'kristijanhusak/vim-hybrid-material'
 
 " Genreal Highlighter
 Plug 'jaxbot/semantic-highlight.vim', { 'on': 'SemanticHighlightToggle' }
@@ -31,7 +24,6 @@ Plug 'jaxbot/semantic-highlight.vim', { 'on': 'SemanticHighlightToggle' }
 
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf.vim'
 
 " Taglist
@@ -45,7 +37,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Undo Tree
@@ -55,27 +47,13 @@ Plug 'mbbill/undotree'
 "Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 "Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
 "Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter', { 'on': 'GitGutterEnable' }
+Plug 'airblade/vim-gitgutter'
 
 " Tex
 "Plug 'lervag/vimtex'
 
-" CSharp
-"Plug 'OmniSharp/omnisharp-vim'
-"Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
-
 " HTML, CSS, JavaScript, PHP, JSON, etc.
 " Plug 'elzr/vim-json'
-"Plug 'hail2u/vim-css3-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-"Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
-"Plug 'pangloss/vim-javascript', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-"Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-"Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-"Plug 'jelera/vim-javascript-syntax', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-"Plug 'jaxbot/browserlink.vim'
-
-" Go
-"Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 
 " Python
 "Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
@@ -104,7 +82,7 @@ Plug 'tpope/vim-surround'
 "Plug 'gcmt/wildfire.vim' " in Visual mode, type k' to select all text in '', or type k) k] k} kp
 "Plug 'junegunn/vim-after-object' " da= to delete what's after =
 Plug 'junegunn/vim-easy-align' " gaip= to align the = in paragraph
-"Plug 'tpope/vim-capslock'	" Ctrl+L (insert) to toggle capslock
+Plug 'tpope/vim-capslock'	" Ctrl+L (insert) to toggle capslock
 "Plug 'easymotion/vim-easymotion'
 Plug 'Konfekt/FastFold'
 
@@ -116,58 +94,35 @@ Plug 'Konfekt/FastFold'
 
 " For general writing
 Plug 'junegunn/goyo.vim'
-"Plug 'reedes/vim-wordy'
-"Plug 'ron89/thesaurus_query.vim'
 
 " Bookmarks
 Plug 'kshenoy/vim-signature'
 
-" Find & Replace
-"Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
-"Plug 'osyo-manga/vim-anzu'
-
-" Documentation
-"Plug 'KabbAmine/zeavim.vim' " <LEADER>z to find doc
-
 " Mini Vim-APP
-"Plug 'voldikss/vim-floaterm'
-"Plug 'liuchengxu/vim-clap'
 "Plug 'jceb/vim-orgmode'
 Plug 'mhinz/vim-startify'
 
-" Vim Applications
-"Plug 'itchyny/calendar.vim'
-
 " Other visual enhancement
 Plug 'ryanoasis/vim-devicons'
-
-" Other useful utilities
-" Plug 'tpope/vim-eunuch' " do stuff like :SudoWrite
-
-" Dependencies
-"Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'kana/vim-textobj-user'
-"Plug 'roxma/nvim-yarp'
-"Plug 'rbgrouleff/bclose.vim' " For ranger.vim
 
 call plug#end()
 
 " ===================== Start of Plugin Settings =====================
 
-" ==
-" == NERDTree-git
-" ==
-let g:NERDTreeIndicatorMapCustom = {
-			\ "Modified"	: "✹",
-			\ "Staged"		: "✚",
-			\ "Untracked" : "✭",
-			\ "Renamed"	 : "➜",
-			\ "Unmerged"	: "═",
-			\ "Deleted"	 : "✖",
-			\ "Dirty"		 : "✗",
-			\ "Clean"		 : "✔︎",
-			\ "Unknown"	 : "?"
-			\ }
+" " ==
+" " == NERDTree-git
+" " ==
+" let g:NERDTreeIndicatorMapCustom = {
+"			\ "Modified"	: "✹",
+"			\ "Staged"		: "✚",
+"			\ "Untracked" : "✭",
+"			\ "Renamed"	 : "➜",
+"			\ "Unmerged"	: "═",
+"			\ "Deleted"	 : "✖",
+"			\ "Dirty"		 : "✗",
+"			\ "Clean"		 : "✔︎",
+"			\ "Unknown"	 : "?"
+"			\ }
 
 
 " ===
@@ -175,8 +130,8 @@ let g:NERDTreeIndicatorMapCustom = {
 " ===
 " fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-yank', 'coc-lists', 'coc-gitignore', 'coc-vimlsp', 'coc-tailwindcss', 'coc-stylelint']
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-json', 'coc-yank', 'coc-gitignore', 'coc-lists', 'coc-yaml', 'coc-actions', 'coc-diagnostic', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-omni', 'coc-emoji', 'coc-syntax', 'coc-ultisnips', 'coc-pairs']
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -187,7 +142,8 @@ inoremap <silent><expr> <Tab>
 			\ <SID>check_back_space() ? "\<Tab>" :
 			\ coc#refresh()
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-o> coc#refresh()
+
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> gd <Plug>(coc-definition)
@@ -196,6 +152,22 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
+" show documentation in preview window.
+nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" === coc-explorer
+" nmap <space>e :CocCommand explorer<CR>
+
+" List all presets
+" nmap <space>el :CocList explPresets
 
 
 " ===

@@ -22,7 +22,7 @@ set pyx=3 "pythonx
 " ===
 " set colorcolumn=80
 
-set updatetime=1000
+set updatetime=300
 " 1. milliseconds swap files will be written to the disk
 " 2. cursorhold
 " 3. <plug>vim-gitgutter
