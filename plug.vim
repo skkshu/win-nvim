@@ -426,4 +426,34 @@ let NERDTreeMapChangeRoot      = "l"
 let NERDTreeMapMenu            = ","
 let NERDTreeMapToggleHidden    = "zh"
 
+
+
+" ===
+" === Bullets.vim
+" ===
+"let g:bullets_set_mappings = 0
+let g:bullets_enabled_file_types = [
+			\ 'markdown',
+			\ 'text',
+			\ 'gitcommit',
+			\ 'scratch'
+			\]
+
+" " ===
+" " === Ultisnips
+" " ===
+" let g:tex_flavor = "latex"
+" inoremap <c-n> <nop>
+" let g:UltiSnipsExpandTrigger="<c-e>"
+" let g:UltiSnipsJumpForwardTrigger="<c-e>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
+" silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
+" " Solve extreme insert-mode lag on macOS (by disabling autotrigger)
+" augroup ultisnips_no_auto_expansion
+"     au!
+"     au VimEnter * au! UltiSnips_AutoTrigger
+" augroup END
+" 
+
 " ===================== End of Plugin Settings =====================
