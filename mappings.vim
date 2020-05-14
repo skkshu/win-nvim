@@ -48,6 +48,7 @@ noremap ` ~
 
 " make <nno>Y more logical, but not vi-compatible
 nnoremap Y y$
+" noremap y; ^v$<left>y
 
 " Copy to system clipboard "I do need that
 " vnoremap Y "+y
@@ -64,7 +65,7 @@ noremap <C-g> 1<C-g>
 
 
 " Compile function
-noremap <F5> :call CompileRunGcc()<CR>
+noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'

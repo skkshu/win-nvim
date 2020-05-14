@@ -93,7 +93,7 @@ Plug 'Konfekt/FastFold'
 "Plug 'Chiel92/vim-autoformat'
 
 " For general writing
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Bookmarks
 Plug 'kshenoy/vim-signature'
@@ -130,7 +130,7 @@ call plug#end()
 " ===
 " fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-vimlsp', 'coc-json', 'coc-yank', 'coc-gitignore', 'coc-lists', 'coc-yaml', 'coc-actions', 'coc-diagnostic', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-omni', 'coc-emoji', 'coc-syntax', 'coc-ultisnips', 'coc-pairs']
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-json', 'coc-yank', 'coc-lists', 'coc-yaml', 'coc-actions', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-omni', 'coc-emoji', 'coc-syntax', 'coc-ultisnips', 'coc-pairs']
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -213,6 +213,10 @@ let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 " ===
 " === vim-gitgutter
 " ===
+
+" 0 to Turn off vim-gitgutter by default
+let g:gitgutter_enabled = 1
+
 set signcolumn=auto " yes
 let g:gitgutter_max_signs = 500 " Default: 500
 let g:gitgutter_map_keys = 0 " Disable all key mappings
@@ -222,8 +226,8 @@ highlight GitGutterDelete guifg=#ff2222 guibg=NONE ctermfg=1 ctermbg=NONE
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
-" let g:gitgutter_sign_removed_first_line = '^^'
-" let g:gitgutter_sign_modified_removed = 'ww'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = 'x'
 nmap <c-[> <Plug>(GitGutterPrevHunk)
 nmap <c-]> <Plug>(GitGutterNextHunk)
 nmap ghs <Plug>(GitGutterStageHunk)
@@ -234,7 +238,14 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
-nmap <LEADER>gg :GitGutterEnable<CR>
+nmap ght :GitGutterToggle<CR>
+
+" gitgutter statusline [a,m,r]
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
 
 " ===
 " === vim-signature
@@ -313,7 +324,7 @@ let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 
 
 
 
-noremap <F4> :TagbarToggle<CR><C-w><C-w>
+" noremap <F4> :TagbarToggle<CR><C-w><C-w>
 nnoremap <Leader>sm :SemanticHighlightToggle<cr>
 
 " ===
@@ -414,14 +425,14 @@ let g:php_folding = 1
 noremap tt :NERDTreeToggle<CR>
 let NERDTreeMapOpenExpl        = ""
 let NERDTreeMapUpdir           = "N"
-let NERDTreeMapUpdirKeepOpen   = "n"
+let NERDTreeMapUpdirKeepOpen   = "h"
 let NERDTreeMapOpenSplit       = ""
 let NERDTreeMapOpenVSplit      = "I"
 let NERDTreeMapActivateNode    = "i"
 let NERDTreeMapOpenInTab       = "o"
 let NERDTreeMapOpenInTabSilent = "O"
 let NERDTreeMapPreview         = ""
-let NERDTreeMapCloseDir        = ""
+let NERDTreeMapCloseDir        = "n"
 let NERDTreeMapChangeRoot      = "l"
 let NERDTreeMapMenu            = ","
 let NERDTreeMapToggleHidden    = "zh"

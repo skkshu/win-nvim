@@ -31,6 +31,7 @@ source ~/.config/nvim/hi.vim
 " ===
 exec "nohlsearch"
 
+inoremap <F4> <nop>
 " ino <C-e> <C-n>
 " ino <C-u> <C-p>
 " ino <C-s> <BS>
