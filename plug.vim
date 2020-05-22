@@ -101,6 +101,7 @@ Plug 'kshenoy/vim-signature'
 " Mini Vim-APP
 "Plug 'jceb/vim-orgmode'
 Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify', { 'on': 'Startify' }
 
 " Other visual enhancement
 Plug 'ryanoasis/vim-devicons'

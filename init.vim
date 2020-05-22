@@ -37,4 +37,6 @@ inoremap <F4> <nop>
 " ino <C-s> <BS>
 " ino <C-n> <C-h>
 ino <C-a> <Esc>A
-ino <C-j> <Esc>o
+ino <c-z> <esc>ua
+no X ZZ
+ino <c-j> <ESC>o

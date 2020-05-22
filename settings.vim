@@ -33,6 +33,7 @@ set cursorline
 set autoindent
 set list
 set listchars=tab:\┆\ ,trail:▫
+" set listchars=tab:\┊\ ,trail:▫
 "|
 " set listchars=space:·,tab:│\ ,eol:¬
 
