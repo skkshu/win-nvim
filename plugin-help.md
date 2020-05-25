@@ -12,3 +12,10 @@
   :  to wrap the word with ''
 `cs'``
   :  to change 'word' to `word`
+
+## vim-easy-align
+xmap:
+  vkpga=
+    vkp: visual in paragraph
+nmap:
+  gakp=
