@@ -23,6 +23,7 @@ noremap <F2> :set signcolumn=auto<CR>
 noremap <LEADER>ss :set spell!<CR>
 
 "color dracula
+" color deus
 color snazzy
 source ~/.config/nvim/hi.vim
 
@@ -40,3 +41,4 @@ ino <C-a> <Esc>A
 ino <c-z> <esc>ua
 no X ZZ
 ino <c-j> <ESC>o
+ino <c-c> <esc>cc
