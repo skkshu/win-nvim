@@ -54,25 +54,7 @@
 	"signature.target": "float",
 	"yank.enableCompletion" : false,
 	"json.format.enable": true,
-	"coc-actions.hideCursor": false,
-	"coc-actions.showActionKind": true,
 	"languageserver": {
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
-			"initializationOptions": {
-				"gocodeCompletionEnabled": true,
-				"diagnosticsEnabled": true,
-				"lintTool": "golint"
-			}
-		},
-		"bash": {
-			"command": "bash-language-server",
-			"args": ["start"],
-			"filetypes": ["sh"],
-			"ignoredRootPaths": []
-		},
 		"ccls": {
 			"command": "ccls",
 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
