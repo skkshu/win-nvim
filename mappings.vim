@@ -23,9 +23,7 @@ noremap H Nzz
 
 noremap ; :
 
-noremap q :q<CR>
 noremap Q :q!<CR>
-noremap S :w<CR>
 
 
 " Search

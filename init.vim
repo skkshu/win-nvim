@@ -42,3 +42,6 @@ ino <c-z> <esc>ua
 no X ZZ
 ino <c-j> <ESC>o
 ino <c-c> <esc>cc
+noremap <c-z> <nop>
+no <BS> :q<CR>
+no <Enter> :w<CR>
