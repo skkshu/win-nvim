@@ -25,7 +25,6 @@ noremap ; :
 
 noremap q :q<CR>
 noremap Q :q!<CR>
-noremap S :w<CR>
 
 
 " Search
@@ -70,7 +69,7 @@ func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
 		exec "!g++ % -o %<"
-		" exec "!time ./%<"
+		exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
 		exec "!g++ -std=c++11 % -Wall -o %<"
