@@ -15,8 +15,8 @@ noremap <silent> E 5j
 noremap <silent> N 0
 noremap <silent> I 78l
 
-noremap W 5w
-noremap B 5b
+" noremap W 5w
+" noremap B 5b
 
 noremap h nzz
 noremap H Nzz
