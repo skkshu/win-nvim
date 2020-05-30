@@ -23,9 +23,9 @@ noremap <F2> :set signcolumn=auto<CR>
 noremap <LEADER>ss :set spell!<CR>
 
 "color dracula
-" color deus
-color snazzy
-source ~/.config/nvim/hi.vim
+color deus
+" color snazzy
+" source ~/.config/nvim/hi.vim
 
 " ===
 " === Necessary Commands to Execute
@@ -45,3 +45,32 @@ ino <c-c> <esc>cc
 noremap <c-z> <nop>
 no <BS> :q<CR>
 no <Enter> :w<CR>
+
+"===
+"=== i_<C-s> // this feature maybe come from plug: vim-surround
+"===
+" curly braces
+ino <c-s>c {}<Left>
+ino <c-s><c-c> {}<Left>
+" angle brackets
+ino <c-s>a <><Left>
+ino <c-s><c-a> <><Left>
+" square brakets
+ino <c-s>s []<Left>
+ino <c-s><c-s> []<Left>
+" brackets
+ino <c-s>b ()<Left>
+ino <c-s><c-b> ()<Left>
+noremap csyn :set syntax=off<cr>
+
+function! TwiddleCase(str)
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
