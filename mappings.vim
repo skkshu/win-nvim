@@ -15,14 +15,15 @@ noremap <silent> E 5j
 noremap <silent> N 0
 noremap <silent> I 78l
 
-noremap W 5w
-noremap B 5b
+" noremap W 5w
+" noremap B 5b
 
 noremap h nzz
 noremap H Nzz
 
 noremap ; :
 
+noremap q :q<CR>
 noremap Q :q!<CR>
 
 
@@ -68,7 +69,7 @@ func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
 		exec "!g++ % -o %<"
-		" exec "!time ./%<"
+		exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
 		exec "!g++ -std=c++11 % -Wall -o %<"
