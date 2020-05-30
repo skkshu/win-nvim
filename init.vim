@@ -25,7 +25,7 @@ noremap <LEADER>ss :set spell!<CR>
 "color dracula
 color deus
 " color snazzy
-" source ~/.config/nvim/hi.vim
+source ~/.config/nvim/hi.vim
 
 " ===
 " === Necessary Commands to Execute
