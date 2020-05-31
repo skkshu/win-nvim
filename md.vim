@@ -18,3 +18,4 @@ autocmd Filetype markdown inoremap <buffer> ,3 ###<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap <buffer> ,4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap <buffer> ,l --------<Enter>
 autocmd Filetype markdown inoremap <buffer> ,m ---<Enter><Enter>---<Enter><Enter><++><esc>3ki
+autocmd Filetype markdown inoremap <buffer> ,k {% highlight  linenos %}<Enter><++><Enter>{% endhighlight %}<enter><enter><++><Esc>4k012la
