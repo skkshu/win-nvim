@@ -132,7 +132,8 @@ call plug#end()
 " ===
 " fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-lists', 'coc-yaml', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-omni', 'coc-emoji', 'coc-syntax', 'coc-ultisnips', 'coc-pairs']
+let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-lists', 'coc-yaml', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-emoji', 'coc-syntax', 'coc-pairs']
+" let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-lists', 'coc-yaml', 'coc-dictionary', 'coc-tag', 'coc-word', 'coc-omni', 'coc-emoji', 'coc-syntax', 'coc-ultisnips', 'coc-pairs']
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
