@@ -12,7 +12,10 @@
 " hi SpecialKey ctermfg=blue guifg=grey70
 " hi NonText ctermfg=gray guifg=grey10 ctermfg=red guifg=red
 
+hi Comment ctermfg=gray guifg=grey70
+
 hi Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+hi SignColumn ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 hi SignColumn ctermbg=none  " terminal Vim
 hi SignColumn guibg=none    " gVim/MacVim
