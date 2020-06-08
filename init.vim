@@ -23,8 +23,8 @@ noremap <F2> :set signcolumn=auto<CR>
 noremap <LEADER>ss :set spell!<CR>
 
 "color dracula
-color deus
-" color snazzy
+" color deus
+color snazzy
 source ~/.config/nvim/hi.vim
 
 " ===
@@ -39,7 +39,7 @@ inoremap <F4> <nop>
 " ino <C-n> <C-h>
 ino <C-a> <Esc>A
 ino <c-z> <esc>ua
-no X ZZ
+" no X ZZ
 ino <c-j> <ESC>o
 ino <c-c> <esc>cc
 noremap <c-z> <nop>
@@ -74,3 +74,17 @@ function! TwiddleCase(str)
   return result
 endfunction
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
+
+
+
+
+  " noremap <C-S-A> GA
+
+" CTRL-A CTRL-X, ":h nrformats"
+set nrformats=bin,hex,octal
+set nrformats+=alpha
+
+
+noremap <c-u> <nop>
+noremap <c-e> <nop>
+noremap <c-b> <nop>
