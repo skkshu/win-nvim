@@ -337,9 +337,9 @@ set rtp+=/usr/local/opt/fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 noremap <C-p> :Files<CR>
 noremap <C-f> :Rg<CR>
-noremap <C-h> :History<CR>
-noremap <C-t> :BTags<CR>
-noremap <C-l> :Lines<CR>
+" noremap <C-h> :History<CR>
+" noremap <C-t> :BTags<CR>
+" noremap <C-l> :Lines<CR>
 " noremap <C-w> :Buffers<CR>
 noremap <leader>; :History:<CR>
 

@@ -3,7 +3,7 @@
 " hi Title guifg=Red
 " hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 " hi LineNr guifg=#606580 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE "snazzy
-" hi CursorLineNr guifg=white
+hi CursorLineNr guifg=white
 
 " hi ColorColumn ctermbg=NONE guibg=#757575
 " hi ColorColumn ctermbg=NONE guibg=NONE

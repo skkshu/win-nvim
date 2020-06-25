@@ -53,6 +53,7 @@ set formatoptions-=tc
 set noshowmode
 set showcmd
 set wildmenu
+" set wildmode=list:longest,full
 set ignorecase
 set smartcase
 set shortmess+=c
