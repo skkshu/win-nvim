@@ -44,7 +44,7 @@ ino <c-j> <ESC>o
 ino <c-c> <esc>cc
 noremap <c-z> <nop>
 no <BS> :q<CR>
-no <Enter> :w<CR>
+" no <Enter> :w<CR>
 
 "===
 "=== i_<C-s> // this feature maybe come from plug: vim-surround
@@ -86,5 +86,20 @@ set nrformats+=alpha
 
 
 noremap <c-u> <nop>
-noremap <c-e> <nop>
 noremap <c-b> <nop>
+
+" ===
+" === netrw
+" ===
+augroup netrw_colemak_fix
+    autocmd!
+    autocmd filetype netrw call Fix_netrw_maps_for_colemak()
+augroup END
+function! Fix_netrw_maps_for_colemak()
+		noremap <buffer> U 5k
+		noremap <buffer> E 5j
+		noremap <buffer> n -
+		noremap <buffer> e j
+		noremap <buffer> u k
+		noremap <buffer> i <cr>
+endfunction
