@@ -103,3 +103,5 @@ function! Fix_netrw_maps_for_colemak()
 		noremap <buffer> u k
 		noremap <buffer> i <cr>
 endfunction
+
+nno S :w<cr>
