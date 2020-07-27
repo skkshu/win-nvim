@@ -105,3 +105,5 @@ function! Fix_netrw_maps_for_colemak()
 endfunction
 
 nno S :w<cr>
+
+cno date -1r!date<cr>
