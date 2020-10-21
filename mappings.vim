@@ -4,22 +4,22 @@
 
 let mapleader=" " " <LEADER> --> <SPACE>
 
-noremap <silent> u k
-noremap <silent> n h
-noremap <silent> e j
-noremap <silent> i l
+" noremap <silent> u k
+" noremap <silent> n h
+" noremap <silent> e j
+" noremap <silent> i l
 
-noremap <silent> U 5k
-noremap <silent> E 5j
+noremap <silent> K 5k
+noremap <silent> J 5j
 
-noremap <silent> N 0
-noremap <silent> I 78l
+noremap <silent> H 0
+noremap <silent> L 78l
 
 " noremap W 5w
 " noremap B 5b
 
-noremap h nzz
-noremap H Nzz
+" noremap h nzz
+" noremap H Nzz
 
 noremap ; :
 
@@ -31,12 +31,12 @@ noremap Q :q!<CR>
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " Undo operation
-noremap l u
+" noremap l u
 noremap <C-l> U
 
 " Insert
-noremap k i
-noremap K I
+" noremap k i
+" noremap K I
 
 " toggle case (instead of ~)
 noremap ` ~

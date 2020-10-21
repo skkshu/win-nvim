@@ -4,7 +4,7 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
-Plug 'majutsushi/tagbar' " Ctags <F6>
+" Plug 'majutsushi/tagbar' " Ctags <F6>
 Plug 'skkshu/vim-copyright' " orig: nine2
 Plug 'lambdalisue/suda.vim'
 Plug 'vim-scripts/fcitx.vim'
@@ -15,12 +15,12 @@ Plug 'junegunn/vim-peekaboo'
 "Plug 'theniceboy/vim-leader-mapper'
 
 " Pretty Dress
-Plug 'ajmwagar/vim-deus'
+" Plug 'ajmwagar/vim-deus'
 Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
 
 " Genreal Highlighter
-Plug 'jaxbot/semantic-highlight.vim', { 'on': 'SemanticHighlightToggle' }
+" Plug 'jaxbot/semantic-highlight.vim', { 'on': 'SemanticHighlightToggle' }
 "Plug 'chrisbra/Colorizer' " Show colors with :ColorHighlight
 
 " File navigation
@@ -28,7 +28,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf.vim'
 
 " Taglist
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 
 " Error checking
 "Plug 'dense-analysis/ale'
@@ -42,7 +42,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Undo Tree
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 
 " Git
 "Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
@@ -283,22 +283,22 @@ let g:SignatureMap = {
 " ===
 map <leader>gy :Goyo<CR>
 
-" ===
-" === Undotree
-" ===
-noremap L :UndotreeToggle<CR>
-let g:undotree_DiffAutoOpen = 1
-let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
-let g:undotree_WindowLayout = 2
-let g:undotree_DiffpanelHeight = 8
-let g:undotree_SplitWidth = 24
-function g:Undotree_CustomMap()
-	nmap <buffer> u <plug>UndotreeNextState
-	nmap <buffer> e <plug>UndotreePreviousState
-	nmap <buffer> U 5<plug>UndotreeNextState
-	nmap <buffer> E 5<plug>UndotreePreviousState
-endfunc
+" " ===
+" " === Undotree
+" " ===
+" noremap L :UndotreeToggle<CR>
+" let g:undotree_DiffAutoOpen = 1
+" let g:undotree_SetFocusWhenToggle = 1
+" let g:undotree_ShortIndicators = 1
+" let g:undotree_WindowLayout = 2
+" let g:undotree_DiffpanelHeight = 8
+" let g:undotree_SplitWidth = 24
+" function g:Undotree_CustomMap()
+" 	nmap <buffer> u <plug>UndotreeNextState
+" 	nmap <buffer> e <plug>UndotreePreviousState
+" 	nmap <buffer> U 5<plug>UndotreeNextState
+" 	nmap <buffer> E 5<plug>UndotreePreviousState
+" endfunc
 
 " ===
 " === suda.vim
@@ -387,20 +387,20 @@ nmap ga <Plug>(EasyAlign)
 " ===
 " === Vista.vim
 " ===
-noremap T :silent! Vista finder coc<CR>
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'ctags'
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
-function! NearestMethodOrFunction() abort
-	return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-set statusline+=%{NearestMethodOrFunction()}
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+" noremap T :silent! Vista finder coc<CR>
+" let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" let g:vista_default_executive = 'ctags'
+" let g:vista_fzf_preview = ['right:50%']
+" let g:vista#renderer#enable_icon = 1
+" let g:vista#renderer#icons = {
+"\   "function": "\uf794",
+"\   "variable": "\uf71b",
+"\  }
+" function! NearestMethodOrFunction() abort
+" 	return get(b:, 'vista_nearest_method_or_function', '')
+" endfunction
+" set statusline+=%{NearestMethodOrFunction()}
+" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 
 " ===

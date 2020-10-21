@@ -96,12 +96,9 @@ augroup netrw_colemak_fix
     autocmd filetype netrw call Fix_netrw_maps_for_colemak()
 augroup END
 function! Fix_netrw_maps_for_colemak()
-		noremap <buffer> U 5k
-		noremap <buffer> E 5j
-		noremap <buffer> n -
-		noremap <buffer> e j
-		noremap <buffer> u k
-		noremap <buffer> i <cr>
+		noremap <buffer> K 5k
+		noremap <buffer> J 5j
+		noremap <buffer> l <cr>
 endfunction
 
 nno S :w<cr>
