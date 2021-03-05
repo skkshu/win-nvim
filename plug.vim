@@ -4,10 +4,11 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
+Plug 'lilydjwg/fcitx.vim'
 " Plug 'majutsushi/tagbar' " Ctags <F6>
 Plug 'skkshu/vim-copyright' " orig: nine2
 Plug 'lambdalisue/suda.vim'
-Plug 'vim-scripts/fcitx.vim'
+" Plug 'vim-scripts/fcitx.vim'
 " Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/vim-peekaboo'
@@ -35,7 +36,7 @@ Plug 'junegunn/fzf.vim'
 "Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 
 " Auto Complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
 Plug 'SirVer/ultisnips'
