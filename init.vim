@@ -104,4 +104,4 @@ endfunction
 
 nno S :w<cr>
 
-cno date -1r!date<cr>
+" cno date -1r!date<cr>
