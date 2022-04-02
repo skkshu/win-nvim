@@ -72,11 +72,19 @@ if has('persistent_undo')
 	set undofile
 	set undodir=~/.config/nvim/tmp/undo
 endif
-set swapfile dir=~/.config/nvim/tmp/swap
+set swapfile dir=~/.config/nvim/tmp/swap "名字只能是dir
 
-call mkdir(&undodir, "p", 0o700)
-call mkdir(&backupdir, "p", 0o700)
-call mkdir(&dir, "p", 0o700)
+if !isdirectory(&undodir)
+	call mkdir(&undodir, "p", 0o700)
+endif
+
+if !isdirectory(&backupdir)
+	call mkdir(&backupdir, "p", 0o700)
+endif
+
+if !isdirectory(&dir)
+	call mkdir(&dir, "p", 0o700)
+endif
 
 " when you enter a file, your cursor will jump to the place you edit last time.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
