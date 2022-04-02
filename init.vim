@@ -2,6 +2,7 @@ if empty(glob('~/.config/nvim/plugged/'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/settings.vim
 

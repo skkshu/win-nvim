@@ -65,15 +65,18 @@ set visualbell " instead of beeping
 
 
 " store the edit history even you quit
-silent !mkdir -p ~/.config/nvim/tmp/backup
-silent !mkdir -p ~/.config/nvim/tmp/undo
-set backupdir=~/.config/nvim/tmp/backup,.
-set directory=~/.config/nvim/tmp/backup,.
+" silent !mkdir -p ~/.config/nvim/tmp/backup
+" silent !mkdir -p ~/.config/nvim/tmp/undo
+set backupdir=~/.config/nvim/tmp/backup
 if has('persistent_undo')
 	set undofile
-	set undodir=~/.config/nvim/tmp/undo,.
+	set undodir=~/.config/nvim/tmp/undo
 endif
+set swapfile dir=~/.config/nvim/tmp/swap
 
+call mkdir(&undodir, "p", 0o700)
+call mkdir(&backupdir, "p", 0o700)
+call mkdir(&dir, "p", 0o700)
 
 " when you enter a file, your cursor will jump to the place you edit last time.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
