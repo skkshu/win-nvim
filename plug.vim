@@ -4,6 +4,7 @@
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug '<++>'
+Plug 'Neur1n/neuims' ", {'on': 'IMSToggle'}
 Plug 'lilydjwg/fcitx.vim'
 " Plug 'majutsushi/tagbar' " Ctags <F6>
 Plug 'skkshu/vim-copyright' " orig: nine2
@@ -111,6 +112,11 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " ===================== Start of Plugin Settings =====================
+
+" ==
+" == Windows im switch - is for short
+" ==
+nnoremap <silent> <leader>is :call neuims#Toggle()<CR>
 
 " " ==
 " " == NERDTree-git
